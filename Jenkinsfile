@@ -24,7 +24,8 @@ pipeline {
 					stopBuild: false,
 					odcInstallation: 'dependencyCheck')
 				}
-		}	
+			}
+		}
 	post {
 		success {
 			dependencyCheckPublisher pattern: 'dependency-check-report.xml'
