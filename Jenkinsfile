@@ -22,7 +22,8 @@ pipeline {
 					    --out .
 					''',
 					stopBuild: false,
-					odcInstallation: 'dependencyCheck'
+					odcInstallation: 'dependencyCheck')
+				}
 		}	
 	post {
 		success {
