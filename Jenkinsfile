@@ -13,7 +13,7 @@ pipeline {
 						--format XML \
 						--prettyPrint\
 						--out .
-					'''
+					''',
 					odcInstallation: 'dependency-check')
 				}
 			}
