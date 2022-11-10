@@ -6,22 +6,14 @@ pipeline {
 				git 'https://github.com/hellogeraldblah/JenkinsDependencyCheckTest.git'
 			}
 		}
-		stage('OWASP DependencyCheck') {
+		stage('OWASP Dependency-Check') {
 			steps {
 				nodejs(nodeJSInstallationName: 'nodejs') {
-				    dependencyCheck(
-					additionalArguments: '''
-					    --enableExperimental \
-					    --disableNodeAudit \
-					    --disableRetireJS \
-					    --nodeAuditSkipDevDependencies \
-					    --nodePackageSkipDevDependencies \
-					    --format JSON \
-					    --format XML \
-					    --prettyPrint \
-					    --out .
-					''',
-					stopBuild: false,
+					dependencyCheck(additionalArguments: '''
+						--format XML \
+						--prettyPrint\
+						--out .
+					'''
 					odcInstallation: 'dependencyCheck')
 				}
 			}
