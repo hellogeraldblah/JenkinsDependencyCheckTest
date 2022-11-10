@@ -14,7 +14,7 @@ pipeline {
 						--prettyPrint\
 						--out .
 					'''
-					odcInstallation: 'dependencyCheck')
+					odcInstallation: 'dependency-check')
 				}
 			}
 		}
